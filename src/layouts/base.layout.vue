@@ -69,7 +69,14 @@ const tools = computed<ToolCategory[]>(() => [
 
             <template v-if="commitSha && commitSha.length > 0">
               -
-            
+              <c-link
+                target="_blank"
+                rel="noopener"
+                type="primary"
+                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
+              >
+                {{ commitSha }}
+              </c-link>
             </template>
           </div>
           <div>
@@ -113,7 +120,7 @@ const tools = computed<ToolCategory[]>(() => [
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
         </div>
 
-        
+      
       </div>
       <slot />
     </template>
